@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-import os
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
@@ -63,5 +63,4 @@ def update(sno):
 
         
 if __name__ == "__main__":
-    PORT = int(os.environ.get('PORT', 33507))
-    app.run(host='0.0.0.0', port=PORT, debug=True)
+    app.run(debug=True, port=33507)
